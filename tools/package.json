@@ -1,0 +1,11 @@
+{
+  "name": "tool",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup-plugin-uglify": "~0.3.1"
+  },
+  "scripts": {
+    "build-pc": "rollup -c",
+    "build-m": "rollup -c rollup-m.config.js"
+  }
+}

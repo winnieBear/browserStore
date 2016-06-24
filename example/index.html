@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>local storage demo </title>
+
+</head>
+<body>
+<h1>local storage demo </h1>
+
+<button onclick="test();">run</button>
+
+<script src="../dist/ppstore-m.js"></script>
+
+
+<script type="text/javascript">
+function test(){
+	//get key=aaa
+	var key = 'aaa';
+	console.log('get key=aaa,val=',ppStore.get(key));
+	//set key=aaa,val='this is aaa---'
+	//set 的key和val都必须是字符串，如果是其他类型，先通过JSON.stringify转成字符串
+	console.log('set key=aaa,val=this is aaa +随机数');
+	var key = 'aaa';
+	var val = 'this is aaa-'+Math.random();
+	ppStore.set(key,val);
+	console.log('get key=aaa,after set');
+	console.log('get key=aaa,val=',ppStore.get(key));
+
+	//clear key
+	console.log('clear key=aaa');
+	ppStore.clear(key);
+	console.log('get key=aaa,after clear');
+	console.log('get key=aaa,val=',ppStore.get(key));
+}
+
+
+</script>
+
+
+</body>
+</html>
